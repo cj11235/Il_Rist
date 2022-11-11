@@ -1,0 +1,268 @@
+/* style classes to be used in the Il Rist demo website */
+
+:root {
+
+	/* color theme */
+	--lightBackgroundColor:rgb(247,221,168);
+	--mainDarkColor:rgb(89,53,0);
+
+
+	/* for background, container, and general sizing */
+	--pageBackgroundColor: var(--lightBackgroundColor);
+	--pageMaxWidth:800px;
+	--pageMinWidth:450px;
+	--aboveMargin:20px;
+	--sideMargin:20px;
+
+	/* borders */
+	--borderColor: var(--mainDarkColor);
+	--borderWidth:3px;
+	--borderStyle:solid;
+
+	/* top image section */
+	--topImageDivHeight:170px;
+	--menuHeight:40px;
+
+	/* text */
+	--fontFamily: helvetica;
+	--mainFontSize: 14pt;
+	--smallFontSize: 10pt;
+
+	/* menu */
+	--menuTextPadding:10px;
+
+	/* content section */
+	--contentPadding:30px;
+
+}
+
+
+body {
+	background-color: var(--pageBackgroundColor);
+	margin-left: var(--sideMargin);
+	margin-right: var(--sideMargin);
+
+}
+
+div.containerDiv {
+
+	max-width: var(--pageMaxWidth);
+	min-width: var(--pageMinWidth);
+	margin:auto;  /* this centers the div on the body */
+	margin-top:var(--aboveMargin);
+	margin-bottom:15px;
+
+	/* for the text */
+	color: var(--mainDarkColor);
+	font-family: var(--fontFamily);
+	font-size: var(--mainFontSize);
+	
+
+}
+
+
+div.topImageDiv {
+	height: var(--topImageDivHeight);
+	border-style: var(--borderStyle);
+	border-color: var(--borderColor);
+	border-width: var(--borderWidth);
+	padding:5px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	align-items:center;
+	
+
+}
+
+
+div.cornersPairDiv {
+
+	align-self:stretch;
+	display:inline-flex;
+	flex-direction:column;
+	justify-content:space-between;
+
+}
+
+
+
+img.logoImg {
+	
+	
+}
+
+
+div.navDiv {
+	margin-top:var(--aboveMargin);
+	height: var(--menuHeight);
+	border-style: var(--borderStyle);
+	border-bottom:none;
+	border-color: var(--borderColor);
+	border-width: var(--borderWidth);
+
+	display:flex;
+	flex-direction:row;
+	justify-content:space_evenly;
+	align-items:flex-start;
+
+
+	
+}
+
+button.navTabBut {
+	
+	border:none;
+	border-right: solid;
+	border-left:solid;
+	border-bottom: solid;
+	border-color: var(--borderColor);
+	border-width: var(--borderWidth);
+
+	flex-grow:2;
+	text-align:center;
+	padding:var(--menuTextPadding);
+	
+
+	background-color:transparent;
+
+	color:var(--mainDarkColor);
+	font-family: var(--fontFamily);
+	font-size: var(--mainFontSize);
+
+}
+
+button.navTabButLeft {
+
+	border-left:none;
+
+}
+
+button.navTabButRight {
+
+	border-right:none;
+
+}
+
+
+
+button.navTabBut:hover {
+	
+	background-color: var(--mainDarkColor);
+	color:var(--lightBackgroundColor);
+	border-bottom:solid;
+	border-color:var(--mainDarkColor);
+
+}
+
+button.navTabButSelected {
+
+	border-color: transparent;
+	
+
+}
+
+button.navTabButSelected:hover {
+
+	background-color: var(--lightBackgroundColor);
+	color:var(--mainDarkColor);
+	border-bottom:none;
+	border-color:transparent;
+
+}
+
+
+
+div.contentDiv {
+	border-style: var(--borderStyle);
+	border-top:none;
+	border-color: var(--borderColor);
+	border-width: var(--borderWidth);
+	min-height:200px;
+	padding: var(--contentPadding);
+
+	display:flex;
+	flex-direction:row;
+	justify-content: space-evenly;
+
+}
+
+p {
+	text-indent:20px;
+
+}
+
+img.picImg {
+
+	display:inline-block;
+	float:left;
+	padding-right:40px;
+	padding-top:20px;
+	padding-bottom:20px;
+
+	
+
+}
+
+
+div.tabDiv {
+	
+
+}
+
+
+div.tabDivMenu {
+
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-content:center;
+
+	text-align:center;
+
+}
+
+div.tabDivContact {
+
+	display:flex;
+	flex-direction:row;
+	justify-content:space-evenly;
+	align-content:center;
+
+	text-align:center;
+
+
+}
+
+div.contactInfo {
+
+	display:flex;
+	flex-direction:column;
+	justify-content:space-evenly;
+	align-content:center;
+
+	text-align:center;
+
+}
+
+
+div.tabDivHidden {
+	
+	display:none;
+
+}
+
+
+div.belowContentDiv {
+
+	margin-top: var(--aboveMargin);
+	text-align:center;
+	margin-bottom:40px;
+
+	/* text */
+	font-size: var(--smallFontSize);
+}
+
+
+
+
