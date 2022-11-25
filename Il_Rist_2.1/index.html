@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+<head>
+
+	<!-- page title-->
+	<title>Il Rist - Relaxed Classy Italian</title>
+
+	<!-- define character sets to use-->
+	<meta charset = "UTF-8">
+
+	<!-- prepare to respond to device size-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+	<!-- link to an external document that containt the css code for styles-->
+	<link rel="stylesheet" type="text/css" href="stylesheet/stylesheet.css">
+
+	<!-- no style here because it uses an external stylesheet-->
+	<style>
+	</style>
+
+
+</head>
+
+<body>
+
+<!-- a container to hold the page on top of the background-->
+<div id = "containerDiv" class = "containerDiv">
+
+	<!-- a container to hold the design at the top above the menu-->
+	<div id = "topImageDiv" class = "topImageDiv">
+
+		<!-- left corner decorations-->
+		<div id = "leftCornersDiv" class = "cornersPairDiv">
+			<img id = "topLeftCorner" src = "content/topleftcorner.png" alt="top left corner decoration">
+			<img id = "bottomLeftCorner" src = "content/bottomleftcorner.png" alt="bottom left corner decoration">	
+		</div>
+
+		<!-- the logo image-->
+		<img id = "logoImg" class = "logoImg" src = "content/logo.png" alt="Il Rist logo">
+		
+		
+		<!-- right corners decorations-->
+		<div id = "rightCornersDiv" class = "cornersPairDiv">
+			<img id = "topRightCorner" src = "content/toprightcorner.png" alt="top right corner decoration">
+			<img id = "bottomRightCorner" src = "content/bottomrightcorner.png" alt="bottom right corner decoration">
+		</div>
+
+
+	</div>
+
+
+	<!-- the function that will get run when a user clicks one of the navigation tabs-->
+	<script>
+			
+
+			function navClickFun(clickedID) {
+
+				//console.log(clickedID);
+			
+				// unselect the currently selescted tab
+				let currentTab = document.getElementsByClassName("navButSelected")[0];
+				currentTab.classList.remove("navButSelected");
+
+				// select the newly clicked tab
+				document.getElementById(clickedID).classList.add("navButSelected");
+
+				// hide the associated div
+				let currentTabID = currentTab.id;
+				// transform the ID by removing the last six letters "NavBut" and then adding "Div" instead
+				let currentDivID = currentTabID.slice(0, -6) + "Div";
+				document.getElementById(currentDivID).classList.add("tabDivHidden");
+	
+				// show the associated div
+				let nextDivID = clickedID.slice(0,-6) + "Div";
+				document.getElementById(nextDivID).classList.remove("tabDivHidden");
+				
+			
+			}
+
+	</script>
+	
+
+
+
+	<!-- a container to hold the navigation bar-->
+	<div id = "navDiv" class = "navDiv">
+
+
+		<!-- the tabs are buttons that will run java functions to modify the current page when clicked-->
+		<button type = "button" id = "homeNavBut" class = "navBut navButLeft navButSelected" onclick = navClickFun(id)>Home</button>
+		<button type = "button" id = "menuNavBut" class = "navBut" onclick = navClickFun(id)>Menu</button>
+		<button type = "button" id = "orderNavBut" class = "navBut" onclick = navClickFun(id)>Order</button>
+		<button type = "button" id = "contactNavBut" class = "navBut navButRight" onclick = navClickFun(id)>Directions & Contact</button>
+		
+	</div>
+
+	<!-- a container to hold the main content of the page-->
+	<div id = "contentDiv" class = "contentDiv">
+
+		<!-- to hold the content of the home tab-->
+		<div id = "homeDiv" class = "tabDivTwoCol">
+			
+			<img src = "content/people_having_fun_pic.png" class = "picImg" alt = "image of diners having a good time">
+
+			<p>Your experience at Il Rist will be a great Italian meal in a "relaxed–classy" atmosphere. Yes to the high end cuisine that is served at top restaurants, but pass on the stuffy attitude. Enjoy your time together with friends and family in our peaceful dining room.  Or grab a quick drink and some apps in our stylish bar room. Or maybe get some fresh air as you eat outside on our private gardened patio space. Whatever it is, let us welcome you like a guest to our home.</p>
+		</div>
+
+		<!-- to hold the content of the menu tab-->
+		<div id = "menuDiv" class = "tabDivOneCol tabDivHidden">
+			<a href = "content/Il_Rist_Menu.pdf" target = "_blank">Click Here to View Our Menu</a>
+		</div>
+
+		<!-- to hold the content of the order tab-->
+		<div id = "orderDiv" class = "tabDivOneCol tabDivHidden">
+			<p>To place a pickup order<br>Call us: 1-(123)-456-7890</p>
+		</div>
+
+
+		<!-- to hold the content of the contact tab-->
+		<div id = "contactDiv" class = "tabDivTwoCol tabDivHidden">
+			<img src = "content/map.png" class = "picImg" alt = "map image">
+
+
+			<div id = "contactInfo" class = "contactInfo">
+				<p class = "contactP">Hours: Tuesday–Sunday<br>11:00 AM to 11:00 PM</p>
+				<p class = "contactP">Location: 123 Amazing Road,<br> Amazingtown, USA</p>
+				<p class = "contactP">Phone: 1-(123)-456-7890</p>
+				<p class = "contactP">Email: IlRist@IlRist.com</p>
+			</div>
+		</div>
+
+
+
+
+
+	</div>
+
+	<!-- a container to hold content below the main content of the page-->
+	<div id = "belowContentDiv" class = "belowContentDiv">
+		Copyright CJakobsche 2022 - All Rights Reserved
+	</div>
+
+</div>
+
+	
+
+
+</body>
+
+</html>
+
