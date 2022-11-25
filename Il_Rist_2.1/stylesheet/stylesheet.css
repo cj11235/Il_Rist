@@ -1,0 +1,421 @@
+/* style classes to be used in the Il Rist demo website */
+/* mobile first coding */
+
+:root {
+
+	/* colors */
+	--lightBackgroundColor:rgb(247,221,168);
+	--mainDarkColor:rgb(89,53,0);
+
+	--pageBackgroundColor: var(--lightBackgroundColor);
+
+	/* for mobile devices as default */
+	/* adjustments for tablet or computer monitor maded below with media queries */
+
+	/* for background, container, and general sizing */
+
+	--sideMargin:0px;
+	--marginAboveTop:0px;
+	--marginAboveNav:20px;
+	--pageMaxWidth:100%;
+
+
+	/* top image section */
+	--topImageDivHeight:170px;
+	--logoWidth:350px;
+	--topPadding:5px;
+
+	/* nav bar */
+	--navButtonHeight:40px;
+	--buttonTextPadding:10px;
+	--buttonTextSidePadding:20px;
+	
+	/* content section */
+	--contentPadding:30px;
+	--contactMargin:10px;
+
+	/* bottom content */
+	--marginBelowFooter:40px;
+
+	/* borders */
+	--borderColor: var(--mainDarkColor);
+	--borderWidth:3px;
+	--borderStyle:solid;
+	
+
+	/* text */
+	--fontFamily: helvetica;
+	--mainFontSize: 14pt;
+	--smallFontSize: 10pt;
+
+
+
+
+}
+
+/* for larger than mobile phone */
+@media screen and (min-width:600px) {
+:root {
+	--sideMargin:20px;
+	--marginAboveTop:20px;
+	--pageMaxWidth:800px;
+	--pageMinWidth:450px;
+	
+	
+
+}
+
+
+}
+
+
+/* for larger than tablet */
+@media screen and (min-width:768px){
+:root {
+	
+
+}
+}
+
+
+
+
+body {
+	background-color: var(--pageBackgroundColor);
+	margin-left: var(--sideMargin); /* seems to have a default margin on phone displays? */
+	margin-right: var(--sideMargin); /* seems to have a default margin on phone displays? */
+	margin-top: var(--marginAboveTop); /* seems to have a default margin above on phone displays? */	
+}
+
+
+div.containerDiv {
+
+	/* for the text */
+	color: var(--mainDarkColor);
+	font-family: var(--fontFamily);
+	font-size: var(--mainFontSize);
+	
+}
+
+@media screen and (min-width:600px) {
+div.containerDiv {
+
+	max-width: var(--pageMaxWidth);		
+	min-width: var(--pageMinWidth);		
+	margin-left:auto; margin-right:auto;  /* this centers the div on the body */
+
+}
+}
+
+
+
+div.topImageDiv {
+	
+	height: var(--topImageDivHeight);
+
+	border-style: var(--borderStyle);
+	border-color: var(--borderColor);
+	border-width: var(--borderWidth);
+	padding:var(--topPadding);
+	margin-top: var(--marginAboveTop);
+	
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	align-items:center;
+
+
+}
+
+div.cornersPairDiv {
+
+	min-width:0px; /* allows flex shrinking */
+
+	align-self:stretch;
+
+	display:inline-flex;
+	flex-direction:column;
+	justify-content:space-between;
+
+}
+
+
+
+img.logoImg {
+
+	width:var(--logoWidth);
+	min-width:0px; /* allows flex shrinking */
+	flex-shrink:var(--logoShrink);
+
+}
+
+
+div.navDiv {
+
+	margin-top:var(--marginAboveNav);
+	border-style: var(--borderStyle);
+	border-bottom:none;
+	border-color: var(--borderColor);
+	border-width: var(--borderWidth);
+
+	display:flex;
+	flex-wrap:wrap;
+
+}
+
+@media screen and (min-width:600px) {
+div.navDiv {
+
+	flex-wrap:nowrap;
+	flex-direction:row;
+	justify-content:space_evenly;
+	align-items:flex-start;
+
+}
+}
+
+
+div.contentDiv {
+
+	min-height:200px;
+
+	border-style: var(--borderStyle);
+	border-top:none;
+	border-color: var(--borderColor);
+	border-width: var(--borderWidth);
+	padding-top: var(--contentPadding);
+	padding-bottom: var(--contentPadding);
+
+	display:flex;
+	flex-direction:row;
+	justify-content: space-evenly;
+
+}
+
+
+button.navBut {
+	
+	height:var(--navButtonHeight);
+	
+	border:none;
+	border-bottom: solid;
+	border-color:var(--mainDarkColor);
+	padding:var(--buttonTextPadding);
+	padding-left:var(--buttonTextSidePadding);
+	padding-right:var(--buttonTextSidePadding);
+
+	/* width:100%; */
+	min-width:0px;
+	flex-grow:2;
+	flex-shrink:0;
+
+	background-color:transparent;
+	color:var(--mainDarkColor);
+	font-family: var(--fontFamily);
+	font-size: var(--mainFontSize);
+	text-align:center;
+
+
+}
+
+button.navButSelected {
+
+	background-color:var(--mainDarkColor);
+	color:var(--lightBackgroundColor);	
+
+}
+
+
+
+@media screen and (min-width:600px) {
+button.navBut {
+
+
+	border-right: solid;
+	border-left:solid;
+
+	border-color: var(--borderColor);
+	border-width: var(--borderWidth);
+
+	flex-grow:2;
+
+}
+
+button.navButLeft {
+
+	border-left:none;
+
+
+}
+
+button.navButRight {
+
+	border-right:none;
+
+}
+
+
+
+
+button.navButSelected {
+
+	border-color: transparent;
+	background-color:var(--lightBackgroundColor);
+	color:var(--mainDarkColor);	
+
+
+	
+
+}
+
+button.navBut:hover {
+	
+	background-color: var(--mainDarkColor);
+	color:var(--lightBackgroundColor);
+	border-bottom:solid;
+	border-color:var(--mainDarkColor);
+
+}
+
+button.navButSelected:hover {
+
+	background-color: var(--lightBackgroundColor);
+	color:var(--mainDarkColor);
+	border-bottom:none;
+	border-color:transparent;
+
+}
+
+}
+
+
+button {
+	cursor:pointer;
+}
+
+
+div.tabDivTwoCol {  /* expands to two columns for large screen */
+	
+	padding-left: var(--contentPadding);
+	padding-right: var(--contentPadding);
+
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+
+}
+
+div.tabDivOneCol {
+
+	padding-left: var(--contentPadding);
+	padding-right: var(--contentPadding);
+	
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:stretch;
+	align-content:center;
+
+	text-align:center;
+
+
+}
+
+
+
+@media screen and (min-width:600px) {
+div.tabDivTwoCol {
+
+	display:block;
+
+}
+}
+
+@media screen and (min-width:768px) {
+div.tabDiv {
+
+	width:100%;
+
+	display:flex;
+	flex-direction:row;
+	justify-content:space-evenly;
+	align-items:flex-start;
+
+
+}
+}
+
+
+
+
+
+img.picImg {
+
+	padding-top:20px;
+	padding-bottom:20px;
+	
+
+}
+
+@media screen and (min-width:600px) {
+img.picImg {
+
+	display:inline-block;
+	float:left;
+	padding-right:40px;
+
+}
+}
+
+p {
+	text-indent:20px;
+
+}
+
+
+
+div.contactInfo {
+
+	display:flex;
+	flex-direction:column;
+	justify-content:space-evenly;
+	align-content:center;
+
+	text-align:center;
+
+}
+
+
+p.contactP {
+
+	text-indent:0px;
+	margin:var(--contactMargin); 
+	
+}
+
+
+div.tabDivHidden {
+	
+	display:none;
+
+}
+
+
+
+
+div.belowContentDiv {
+
+	margin-top: var(--marginAboveNav);
+	text-align:center;
+	margin-bottom:var(--marginBelowFooter);
+
+	/* text */
+	font-size: var(--smallFontSize);
+}
+
+
+
+
+
+
+
